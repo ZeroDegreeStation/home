@@ -171,6 +171,132 @@
             transform: translateX(-50%);
         }
 
+        /* Stay Plans Section */
+        .stay-plans {
+            margin: 3rem 0;
+        }
+
+        .plans-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .plan-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .plan-card.popular {
+            border: 2px solid #3498db;
+            transform: scale(1.03);
+        }
+
+        .plan-card.popular:hover {
+            transform: scale(1.03) translateY(-10px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background-color: #3498db;
+            color: white;
+            padding: 0.5rem 3rem;
+            transform: rotate(45deg);
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 1;
+        }
+
+        .plan-header {
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+        }
+
+        .plan-card:nth-child(2) .plan-header {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+        }
+
+        .plan-card:nth-child(3) .plan-header {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .plan-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .plan-duration {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .plan-features {
+            padding: 2rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list i {
+            color: #27ae60;
+            margin-right: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-list i.fa-times {
+            color: #e74c3c;
+        }
+
+        .plan-note {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 1rem;
+            border-left: 3px solid #3498db;
+        }
+
         /* Facilities Section */
         .facilities {
             display: grid;
@@ -297,488 +423,4 @@
 
         .gallery-item {
             border-radius: 8px;
-            overflow: hidden;
-            height: 200px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Buttons */
-        .cta-button {
-            display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-top: 1rem;
-            transition: background-color 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            background-color: #2980b9;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .footer-logo span {
-            color: #3498db;
-        }
-
-        .copyright {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #bdc3c7;
-            font-size: 0.9rem;
-        }
-
-        .last-updated {
-            color: #bdc3c7;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .main-nav {
-                position: fixed;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                flex-direction: column;
-                padding: 1rem;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-            }
-
-            .main-nav.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .nav-list {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .nav-item {
-                margin: 0;
-                width: 100%;
-            }
-
-            .nav-link {
-                padding: 1rem;
-                border-bottom: 1px solid #eee;
-            }
-
-            .nav-link.active::after {
-                display: none;
-            }
-
-            .nav-link.active {
-                background-color: #e3f2fd;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .logo {
-                font-size: 1.5rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <!-- Navigation Menu -->
-    <header class="main-header">
-        <div class="nav-container">
-            <a href="#home" class="logo">Snow<span>Station</span></a>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <nav class="main-nav" id="mainNav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#facilities" class="nav-link">Facilities</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#booking" class="nav-link">Booking</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#access" class="nav-link">Access</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Home Section -->
-    <section id="home" class="hero-section">
-        <p class="tagline">Serve Your Convenience</p>
-        
-        <div class="hero-content">
-            <h1>Welcome to the Guest House <span class="highlight">Snow Station</span></h1>
-            <p>Located nearby Meiho Ski Resort, we provide exclusive booking for your convenience. Enjoy comfortable accommodations just minutes from the slopes, perfect for ski enthusiasts and winter vacationers.</p>
-            <a href="#booking" class="cta-button">Book Your Stay Now</a>
-        </div>
-    </section>
-
-    <main>
-        <!-- Facilities Section -->
-        <section id="facilities">
-            <h2 class="section-title">Our Facilities</h2>
-            
-            <div class="facilities">
-                <div class="facility-card">
-                    <div class="facility-icon">
-                        <i class="fas fa-skiing"></i>
-                    </div>
-                    <h3>Ski Equipment Storage</h3>
-                    <p>Secure heated storage for your ski equipment with drying racks for wet gear. We also offer equipment rental service.</p>
-                </div>
-                
-                <div class="facility-card">
-                    <div class="facility-icon">
-                        <i class="fas fa-hot-tub"></i>
-                    </div>
-                    <h3>Hot Tub & Sauna</h3>
-                    <p>Relax in our outdoor hot tub with mountain views or unwind in our Finnish sauna after a day on the slopes.</p>
-                </div>
-                
-                <div class="facility-card">
-                    <div class="facility-icon">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <h3>High-Speed WiFi</h3>
-                    <p>Free high-speed WiFi throughout the property. Perfect for sharing your ski adventures or remote work.</p>
-                </div>
-                
-                <div class="facility-card">
-                    <div class="facility-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>Breakfast Service</h3>
-                    <p>Start your day with our complimentary buffet breakfast featuring local specialties and hot beverages.</p>
-                </div>
-                
-                <div class="facility-card">
-                    <div class="facility-icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <h3>Free Parking</h3>
-                    <p>Ample free parking space with EV charging stations available. Covered parking for added convenience.</p>
-                </div>
-                
-                <div class="facility-card">
-                    <div class="facility-icon">
-                        <i class="fas fa-snowflake"></i>
-                    </div>
-                    <h3>Heated Rooms</h3>
-                    <p>All rooms feature underfloor heating, blackout curtains, and mountain views for ultimate comfort.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Access Section -->
-        <section id="access">
-            <h2 class="section-title">Access & Location</h2>
-            
-            <div class="access-info">
-                <h2>How to Reach Snow Station</h2>
-                <p>We are conveniently located just 800 meters from Meiho Ski Resort main entrance. Multiple transportation options available.</p>
-                
-                <div class="transport-options">
-                    <div class="transport-card">
-                        <h4><i class="fas fa-car"></i> By Car</h4>
-                        <p>From Tokyo: Take Highway 17 to Nagano exit. Follow signs to Meiho Ski Resort. Free parking available.</p>
-                        <p><strong>Travel time:</strong> Approximately 3 hours from Tokyo</p>
-                    </div>
-                    
-                    <div class="transport-card">
-                        <h4><i class="fas fa-train"></i> By Train</h4>
-                        <p>Take Shinkansen to Nagano Station, then local train to Meiho Station. We provide pickup service from station (advance reservation required).</p>
-                        <p><strong>Travel time:</strong> 2.5 hours from Tokyo Station</p>
-                    </div>
-                    
-                    <div class="transport-card">
-                        <h4><i class="fas fa-bus"></i> By Bus</h4>
-                        <p>Direct overnight buses available from Shinjuku to Meiho Ski Resort. Stop is 5-minute walk from our guest house.</p>
-                        <p><strong>Travel time:</strong> 4 hours from Shinjuku</p>
-                    </div>
-                </div>
-                
-                <div class="map-container">
-                    <!-- Placeholder for map -->
-                    <div style="background: #e9ecef; padding: 2rem; text-align: center; color: #666;">
-                        <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem; color: #3498db;"></i>
-                        <h3>Interactive Map</h3>
-                        <p>Location: 123 Mountain Road, Meiho, Nagano Prefecture</p>
-                        <p>Distance to ski resort: 800m (5-minute walk or 2-minute shuttle)</p>
-                        <a href="#" class="cta-button" style="margin-top: 1rem;">Open in Google Maps</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Booking Section -->
-        <section id="booking">
-            <h2 class="section-title">Book Your Stay</h2>
-            
-            <div class="booking-form">
-                <form id="bookingForm">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="checkin">Check-in Date</label>
-                        <input type="date" id="checkin" name="checkin" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="checkout">Check-out Date</label>
-                        <input type="date" id="checkout" name="checkout" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="room-type">Room Type</label>
-                        <select id="room-type" name="room-type" required>
-                            <option value="">Select room type</option>
-                            <option value="standard">Standard Double Room</option>
-                            <option value="superior">Superior Mountain View</option>
-                            <option value="family">Family Suite (4 persons)</option>
-                            <option value="deluxe">Deluxe Suite with Balcony</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="guests">Number of Guests</label>
-                        <select id="guests" name="guests" required>
-                            <option value="">Select number of guests</option>
-                            <option value="1">1 Guest</option>
-                            <option value="2">2 Guests</option>
-                            <option value="3">3 Guests</option>
-                            <option value="4">4 Guests</option>
-                            <option value="5+">5+ Guests</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Special Requests</label>
-                        <textarea id="message" name="message" placeholder="Any special requirements, dietary restrictions, or questions..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="cta-button" style="width: 100%; padding: 1rem;">Submit Booking Request</button>
-                </form>
-            </div>
-        </section>
-        
-        <!-- Gallery Section -->
-        <section id="gallery">
-            <h2 class="section-title">Photo Gallery</h2>
-            
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Snow Station exterior">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cozy room interior">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mountain view from room">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1540753007-3fb72ea8d5b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Ski resort nearby">
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">Snow<span>Station</span></div>
-            <p>Near Meiho Ski Resort • Serving your convenience since 2020</p>
-            
-            <div style="margin: 2rem 0;">
-                <a href="#" style="color: white; margin: 0 10px;"><i class="fas fa-envelope"></i> info@snowstation.com</a> |
-                <a href="#" style="color: white; margin: 0 10px;"><i class="fas fa-phone"></i> +1 (555) 123-4567</a> |
-                <a href="#" style="color: white; margin: 0 10px;"><i class="fas fa-map-marker-alt"></i> Directions</a>
-            </div>
-            
-            <div class="last-updated">
-                Last updated: <span id="currentDate"></span>
-            </div>
-            
-            <div class="copyright">
-                &copy; 2023 Guest House Snow Station. All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mainNav.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Set current date for last updated
-        const currentDate = new Date();
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById('currentDate').textContent = currentDate.toLocaleDateString('en-US', options);
-        
-        // Set min date for check-in to today
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('checkin').setAttribute('min', today);
-        
-        // Update checkout min date when checkin changes
-        document.getElementById('checkin').addEventListener('change', function() {
-            document.getElementById('checkout').setAttribute('min', this.value);
-        });
-        
-        // Form submission handler
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const checkin = document.getElementById('checkin').value;
-            const roomType = document.getElementById('room-type').value;
-            const guests = document.getElementById('guests').value;
-            
-            // Show success message
-            alert(`Thank you ${name}! Your booking request for ${guests} guests in a ${roomType} starting ${checkin} has been received. We will contact you at ${email} shortly to confirm your reservation.`);
-            
-            // Reset form
-            this.reset();
-            
-            // Reset date constraints
-            document.getElementById('checkin').setAttribute('min', today);
-            document.getElementById('checkout').removeAttribute('min');
-        });
-        
-        // Navigation highlighting
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        function highlightNavLink() {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (scrollY >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-        
-        window.addEventListener('scroll', highlightNavLink);
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+            overflow
